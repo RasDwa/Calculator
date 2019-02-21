@@ -20,6 +20,7 @@ public class Solution {
     public class Reader extends JFrame {
         JButton a1, a2, a3, a4, a5, a6, a7, a8, a9, a0, plus, minus, delenie, umnozenie, obnulit, ravno, znak;
         JTextField t;
+        eHender hendler = new eHender();
         
         public Reader(String s){
             super(s);
@@ -58,6 +59,13 @@ public class Solution {
             add(obnulit);
             add(ravno);
             add(znak);
+            plus.ActionListener(hendler);
         }
+        public class eHandler implements ActionListener (){
+            public void actionPerformed(ActionEvent e) {
+            if (e.getSourse()==plus) {
+            
+        }
+       
         
     }
