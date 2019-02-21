@@ -19,7 +19,11 @@ public class Solution {
 }
     public class Reader extends JFrame {
         JButton a1, a2, a3, a4, a5, a6, a7, a8, a9, a0, plus, minus, delenie, umnozenie, obnulit, ravno, znak;
-        JTextField t;
+        JTextField t1, t2;
+        JLabel l1, l2;
+        String a;
+        int i, k;
+        
         eHender hendler = new eHender();
         
         public Reader(String s){
@@ -42,6 +46,8 @@ public class Solution {
             obnulit = new JButton("CE");
             ravno = new JButton("=");
             znak = new JButton("±");
+            add(t1);
+            add(t2);
             add(a1);
             add(a2);
             add(a3);
@@ -59,13 +65,41 @@ public class Solution {
             add(obnulit);
             add(ravno);
             add(znak);
+            add(l1);
             plus.ActionListener(hendler);
+            minus.ActionListener(hendler);
+            delenie.ActionListener(hendler);
+            umnozenie.ActionListener(hendler);
+            obnulit.ActionListener(hendler);
         }
         public class eHandler implements ActionListener (){
             public void actionPerformed(ActionEvent e) {
             if (e.getSourse()==plus) {
-            
+            i = Integer.parseInt(t1.getText());
+            k = Integer.parseInt(t2.getText());
+            a = i+k;
+            l1.setText(a);
         }
-       
+            if (e.getSourse()==minus) {
+            i = Integer.parseInt(t1.getText());
+            k = Integer.parseInt(t2.getText());
+            a = i-k;
+            l1.setText(a);
+        }
+        if (e.getSourse()==delenie) {
+            i = Integer.parseInt(t1.getText());
+            k = Integer.parseInt(t2.getText());
+            a = i/k;
+            l1.setText(a);
+        }
+        if (e.getSourse()==obnulit) {
+            l1.setText(null);
+        }
+        if (e.getSourse()==umnozenie) {
+            i = Integer.parseInt(t1.getText());
+            k = Integer.parseInt(t2.getText());
+            a = i*k;
+            l1.setText(a);
+        }
         
     }
